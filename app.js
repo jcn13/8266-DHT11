@@ -17,14 +17,18 @@ function getDB(){
       k = keys[i]
       let temp = values[k].temperature
       let hum = values[k].humidity
-      let date = values[k].timestamp      
+      let date = values[k].timestamp 
+      let moi = values[k].moisture
+      let lux = values[k].light     
     }
     let seconds = values[k].timestamp
     let d = new Date(seconds*1000)
     console.log(values[k])
- 	html += '<tr><td>Temperature</td><td>' + values[k].temperature +' *C</td></tr>'
-	html += '<tr><td>Humidity</td><td>' + values[k].humidity +' %</td></tr>'
-	html += '<tr><td>Date</td><td>' + d +'</td></tr>'
+   	html += '<tr><td>Temperature</td><td>' + values[k].temperature +' *C</td></tr>'
+  	html += '<tr><td>Humidity</td><td>' + values[k].humidity +' %</td></tr>'
+    html += '<tr><td>Moisture</td><td>' + values[k].moisture +' %</td></tr>'
+    html += '<tr><td>Light</td><td>' + values[k].light +' Lux</td></tr>'
+  	html += '<tr><td>Date</td><td>' + d +'</td></tr>'
     html += '</tr></table></div>'
     document.getElementById('history').innerHTML = html     
   })
